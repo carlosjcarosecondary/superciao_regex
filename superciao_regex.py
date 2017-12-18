@@ -59,7 +59,7 @@ def regex_filter(data, uuid):
 	for row in data:
 		regex_test = re.findall(r'(\b|\n)(Werkzeug\w{1,}|WKZ|Betriebsm\w{1,})(\b|\n)', row, re.IGNORECASE)
 		if regex_test:
-			regex_test = re.findall(r'(\b|\n)(eigent\w{1,}|Anlagev|Anspruch|Ansprüche)(\b|\n)', row, re.IGNORECASE)
+			regex_test = re.findall(r'(\b|\n)(Nutzungsrecht\w{1,}|eigent\w{1,}|Anlagev|Intellect\w{0,}|IP|Anspruch|Ansprüche|recht\w{0,})(\b|\n)', row, re.IGNORECASE)
 			if regex_test:
 				regex_index.append(uuid[counter])
 				regex_clause.append(row)
