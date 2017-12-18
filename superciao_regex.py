@@ -57,7 +57,7 @@ def regex_filter(data, uuid):
 	counter = 0
 
 	for row in data:
-		regex_test = re.findall(r'(\b|\n)(\w{0,}preis)(\b|\n)', row, re.IGNORECASE)
+		regex_test = re.findall(r'(\b|\n)(\w{0,}bedarf\w{0,})(\b|\n)', row, re.IGNORECASE)
 		if regex_test:
 			regex_test = re.findall(r'(\b|\n)(EOP|End.of.Production|Serie|Ersatzteil\w{0,}|OT|After.sale|\w{0,}Ende)(\b|\n)', row, re.IGNORECASE)
 			if regex_test:
