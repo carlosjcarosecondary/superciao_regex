@@ -57,7 +57,7 @@ def regex_filter(data, uuid):
 	counter = 0
 
 	for row in data:
-		regex_test = re.findall(r'(\b|\n)(kapa)(\b|\n)', row, re.IGNORECASE)
+		regex_test = re.findall(r'(\b|\n)(Jahresmenge|Jahresbedarf|\w{0,}Mehrpreis|Mehrkosten)(\b|\n)', row, re.IGNORECASE)
 		if regex_test:
 			regex_index.append(uuid[counter])
 			regex_clause.append(row)
