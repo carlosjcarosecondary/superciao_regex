@@ -57,7 +57,7 @@ def regex_filter(data, uuid):
 	counter = 0
 
 	for row in data:
-		regex_test = re.findall(r'(\b|\n)(gerichtsstand|gesetz\w{0,}|Vertragsrecht|Kaufrecht)(\b|\n)', row, re.IGNORECASE)
+		regex_test = re.findall(r'(\b|\n)(Zahlb\w{0,}|Zahlung|zahlungsbed|\w{0,}Rechnung\w{0,})(\b|\n)', row, re.IGNORECASE)
 		if regex_test:
 			regex_index.append(uuid[counter])
 			regex_clause.append(row)
