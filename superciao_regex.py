@@ -57,9 +57,9 @@ def regex_filter(data, uuid):
 	counter = 0
 
 	for row in data:
-		regex_test = re.findall(r'(\b|\n)(Werkzeug\w{1,}|WKZ)(\b|\n)', row, re.IGNORECASE)
+		regex_test = re.findall(r'(\b|\n)(Saving\w{0,}|LTC|LTA|Long.Term|Ratio|Life.Time)', row, re.IGNORECASE)
 		if regex_test:
-			regex_test = re.findall(r'(\b|\n)(\w{0,}Kosten\w{0,}|Invest\w{0,}|\w{0,}Folge\w{0,}|zusätzlich\w{0,}|anfallen\w{0,}|Kapazität\w{0,})(\b|\n)', row, re.IGNORECASE)
+			regex_test = re.findall(r'(\b|\n)(SOP|Start.of.Production)(\b|\n)', row, re.IGNORECASE)
 			if regex_test:
 				regex_index.append(uuid[counter])
 				regex_clause.append(row)
