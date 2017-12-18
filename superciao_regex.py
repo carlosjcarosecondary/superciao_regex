@@ -59,7 +59,7 @@ def regex_filter(data, uuid):
 	for row in data:
 		regex_test = re.findall(r'(\b|\n)(Saving\w{0,}|LTC|LTA|Long.Term|Ratio|Life.Time)', row, re.IGNORECASE)
 		if regex_test:
-			regex_test = re.findall(r'(\b|\n)(SOP|Start.of.Production)(\b|\n)', row, re.IGNORECASE)
+			regex_test = re.findall(r'(\b|\n)(Wertschöpfung\w{0,}|Umlage\w{0,}|A.Preis)(\b|\n)', row, re.IGNORECASE)
 			if regex_test:
 				regex_index.append(uuid[counter])
 				regex_clause.append(row)
